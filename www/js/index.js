@@ -15,7 +15,7 @@ $(document).ready(function(){
 				count++;
 				$("#response-table").append("<tr><td>"+count+"</td><td>"+response.servico.codigoErro +"</td><td>"
 					+response.servico.ipRequisitante+"</td><td>"+response.servico.mensagem+"</td></tr>");
-				$("#response-table").trigger("refresh");
+				$("#response-table").listview("refresh");
 	        }
 	    });
 	});
