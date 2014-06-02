@@ -11,7 +11,7 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(response){
 	            //appendTable(response);
-	            console.log(response);
+	            alert(response.servico.mensagem);
 				count++;
 				$("#response-table").append("<tr><td>"+count+"</td><td>"+response.servico.codigoErro +"</td><td>"
 					+response.servico.ipRequisitante+"</td><td>"+response.servico.mensagem+"</td></tr>");
