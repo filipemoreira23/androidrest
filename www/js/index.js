@@ -5,6 +5,7 @@ $(document).ready(function(){
 				console.log(data);
 				console.log("OI");
 		},"xml");*/
+		alert("OI");
 	 	$.ajax({
 	        url: "http://192.168.0.114/resttest/test.php",
 	        type: "GET",
