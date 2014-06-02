@@ -5,12 +5,19 @@ $(document).ready(function(){
 				console.log(data);
 				console.log("OI");
 		},"xml");*/
-	 	$.get("http://192.168.0.114/resttest/test.php",function(response){
-	 		alert(response.servico.mensagem);
-			count++;
-			$("#response-table").append("<tr><td>"+count+"</td><td>"+response.servico.codigoErro +"</td><td>"
-				+response.servico.ipRequisitante+"</td><td>"+response.servico.mensagem+"</td></tr>");
-			$("#response-table").listview().listview("refresh");
-	 	},"json");
-	 });
+	 	$.ajax({
+	        url: "http://192.168.0.114/resttest/test.php",
+	        type: "GET",
+	        dataType: "json",
+	        success: function(response){
+	            alert(response.servico.mensagem);
+				count++;
+				$("#response-table").append("<tr><td>"+count+"</td><td>"+response.servico.codigoErro +"</td><td>"
+					+response.servico.ipRequisitante+"</td><td>"+response.servico.mensagem+"</td></tr>");
+				$("#response-table").listview().listview("refresh");
+	        }
+	    }).done(function(){
+	    	alert("OI");
+	    });
+	});
 });
