@@ -6,18 +6,16 @@ $(document).ready(function(){
 				console.log("OI");
 		},"xml");*/
 	 	$.ajax({
-	        url: "http://192.168.0.114/resttest/test.php",
+	        url: "https://estruturaorganizacional.dados.gov.br/siorg-servicos-webapp/doc/unidade-organizacional/002981",
 	        type: "GET",
 	        dataType: "json",
 	        success: function(response){
-	            alert(response.servico.mensagem);
 				count++;
 				$("#response-table").append("<tr><td>"+count+"</td><td>"+response.servico.codigoErro +"</td><td>"
 					+response.servico.ipRequisitante+"</td><td>"+response.servico.mensagem+"</td></tr>");
 				$("#response-table").listview().listview("refresh");
 	        }
 	    }).done(function(){
-	    	alert("OI");
 	    });
 	});
 });
